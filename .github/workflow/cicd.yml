@@ -1,0 +1,22 @@
+---
+
+name: DevOps Project pipeline
+
+on:
+  push:
+    branch:
+    - main 
+
+job:
+  build_and_push:
+    run_on: ubuntu-latest
+    steps:
+     - name: Checkout Code
+       uses: Action/checkout@v2
+     - name: set short SHA
+       run: |
+         echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -cl-7)" >> $GITHUB_ENV
+     - name: Build Docker Imagine
+       run: |
+         docker build -t stanley17/devops-project:${{env.SHORT_SHA}} .
+
