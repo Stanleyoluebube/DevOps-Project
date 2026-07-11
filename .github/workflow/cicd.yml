@@ -19,4 +19,11 @@ job:
      - name: Build Docker Imagine
        run: |
          docker build -t stanley17/devops-project:${{env.SHORT_SHA}} .
+     - name: Login to Dockerhub
+       run: |
+         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u $"{{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+     - name: Push to Dockerhub
+       run: |
+         docker push stanley17/devops-project:${{env.SHORT_SHA}}
+         
 
