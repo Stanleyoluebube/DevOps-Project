@@ -1,29 +1,67 @@
 ---
 
+
 name: DevOps Project pipeline
 
 on:
   push:
-    branch:
-    - main 
+    branches:
+      - main 
 
-job:
+jobs:
   build_and_push:
-    run_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-     - name: Checkout Code
-       uses: Action/checkout@v2
-     - name: set short SHA
-       run: |
-         echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -cl-7)" >> $GITHUB_ENV
-     - name: Build Docker Imagine
-       run: |
-         docker build -t stanley17/devops-project:${{env.SHORT_SHA}} .
-     - name: Login to Dockerhub
-       run: |
-         echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u $"{{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-     - name: Push to Dockerhub
-       run: |
-         docker push stanley17/devops-project:${{env.SHORT_SHA}}
-         
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: set short SHA
+        run: |
+          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_ENV
+
+      - name: Login to Dockerhub
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t stanley17/devops-project:${{ env.SHORT_SHA }} .
+
+      - name: Push to Dockerhub
+        run: |
+          docker push stanley17/devops-project:${{ env.SHORT_SHA }}
+
+
+
+
+
+
+
+
+# name: DevOps Project pipeline
+
+# on:
+#   push:
+#     branch:
+#     - main 
+
+# job:
+#   build_and_push:
+#     run_on: ubuntu-latest
+#     steps:
+#      - name: Checkout Code
+#        uses: Action/checkout@v2
+#      - name: set short SHA
+#        run: |
+#          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -cl-7)" >> $GITHUB_ENV
+#      - name: Build Docker Imagine
+#        run: |
+#          docker build -t stanley17/devops-project:${{env.SHORT_SHA}} .
+#      - name: Login to Dockerhub
+#        run: |
+#          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u $"{{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+#      - name: Push to Dockerhub
+#        run: |
+#          docker push stanley17/devops-project:${{env.SHORT_SHA}}
+
 
