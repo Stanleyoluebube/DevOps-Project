@@ -1,0 +1,13 @@
+image:
+  repository: stanley17/devops-project
+  tag: latest
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 8080
+ingress:
+  enabled: false
+serviceAccount:
+  enabled: false
+autoscale:
+  enabled: false

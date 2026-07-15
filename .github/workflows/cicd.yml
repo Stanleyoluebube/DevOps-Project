@@ -31,37 +31,14 @@ jobs:
         run: |
           docker push stanley17/devops-project:${{ env.SHORT_SHA }}
 
+      - name: Configure Git Author
+        run: |
+          git config --local user.email "stanleyoluebube171@gmail.com"
+          git config --local user.name "Stanleyoluebube"
 
-
-
-
-
-
-
-# name: DevOps Project pipeline
-
-# on:
-#   push:
-#     branch:
-#     - main 
-
-# job:
-#   build_and_push:
-#     run_on: ubuntu-latest
-#     steps:
-#      - name: Checkout Code
-#        uses: Action/checkout@v2
-#      - name: set short SHA
-#        run: |
-#          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -cl-7)" >> $GITHUB_ENV
-#      - name: Build Docker Imagine
-#        run: |
-#          docker build -t stanley17/devops-project:${{env.SHORT_SHA}} .
-#      - name: Login to Dockerhub
-#        run: |
-#          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u $"{{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-#      - name: Push to Dockerhub
-#        run: |
-#          docker push stanley17/devops-project:${{env.SHORT_SHA}}
-
-
+      - name: Update Helm Chart with new image tag
+        run: |
+          sed -i "s/tag:.*/tag: *{{ env.SHORT_SHA }}/" ./devops-project\values.yaml
+          git add .devops-project\values.yaml
+          git commit -m "updated the image tag to ${{ env.SHORT_SHA }}"
+          git push
