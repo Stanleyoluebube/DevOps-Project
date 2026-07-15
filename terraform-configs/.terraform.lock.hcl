@@ -1,0 +1,60 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/hashicorp/helm" {
+  version = "3.2.0"
+  hashes = [
+    "h1:ad8XdNRv+trfXgmu0tdI1YeFp7WSO5g9PI3QFOxRR8Y=",
+    "zh:2f1d55bf4e6a9c2629dfd3b162a05632f2e251bf6083d8613f38af3d51cea553",
+    "zh:33b378f15d39c2050a9272f6d5e8437f162972c93244af6df6de54ba2b0a416c",
+    "zh:501d7e7b3d42f5b40a6e5e979d5a6a4d67eba0fb37d786e2c3d7186e742dd557",
+    "zh:52e430da694bad4a06d049aa574d4a7a2b4e11c47d7bab637131068cc1160593",
+    "zh:77fb8ecaa27f4218177917bb3865551b058b92193408fa20366c45a529f0ac94",
+    "zh:b114d6ea5ab4486dc26b83cd595f0af820b3d66d0d1cf81975dfe7baa84419e2",
+    "zh:b6729f6f32fab90945e3cb4ba0268b73262dad0d14c1d71514ac767bac644595",
+    "zh:b9ff1756e698e1d3bdb0c2605ee31794f15d8275e2f8817a2bf66f3272ed9362",
+    "zh:be4791496afea715783f0efb65d21c99d3dc84ddb94ba4868f3afee2d50e71ef",
+    "zh:c8f66bd76991d7521a805cce3000a5226b1b18baf1d6b63a03d38e09208a564b",
+    "zh:e2bdd80b8956307f7307f90ffab0e91169bb83babeb540c712239dbc5c09916f",
+    "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+    "zh:fcda8394edc50d2a2132534edf8655cb25dc76f55937e859b9ffb5f787430f37",
+  ]
+}
+
+provider "registry.terraform.io/hashicorp/kubernetes" {
+  version = "3.2.1"
+  hashes = [
+    "h1:+FgzP28F1P2LvmTWxtb63edwDyI2V9EBjPKBTM1L4C4=",
+    "zh:067fe16a852d42e0f571712e36cb3e71855f917ea2041415e155f56ebc480d7f",
+    "zh:2815e174f8f0f032ea3a64f2196740ad000a39f88ae5646e7061bf15ed589f62",
+    "zh:2f94f6b689c59c43e596e724228f2861095d02c2a2ac2a257a4619667135ac75",
+    "zh:3e807310c84f11561b9ba06b978f03c46cfeca2e84ad0803d34d5d30a8a637cb",
+    "zh:5cba6f92202c60cac6898141356420709f5341b80ae4c360725cc647f86188ff",
+    "zh:72b841b6f0820d8f87c3d7c5a3611c35121ab9a4c1db4ea7a98b0319f209e474",
+    "zh:74770b892ee9b04829d92318d9e8ca96f8143b0c6c766e4141901908173fd01d",
+    "zh:7a723c8ebf9e218d0f7a0cfe6c0437f2b5eeb7ae015a14fad16e0f7fd9ef79ab",
+    "zh:a0f5073b2636a3894d4e9dd1b6853d5f324dd78728313bff79b842e5e9eca96f",
+    "zh:c13241cba993ef63a537beb6a1caf00e233bb045b50d197349530de0ee3276d5",
+    "zh:d52826f4b0227b7db99ea4a1d48f49a0bfb440563c92ebd2f8faec273c856c2d",
+    "zh:dc1cf5505a39a264a650b0830f74150ad02368787e5ead89e4007034f8f47831",
+  ]
+}
+
+provider "registry.terraform.io/scott-the-programmer/minikube" {
+  version     = "0.6.0"
+  constraints = "0.6.0"
+  hashes = [
+    "h1:7ZqValQq2azb9uh+6SE+lILSiK8uggh1YJ+1Hq9ZXng=",
+    "zh:07384be2c110a8727f8a42abb387c5bb715e984ce5394e947a628ac62d9a6288",
+    "zh:1c3e89cf19118fc07d7b04257251fc9897e722c16e0a0df7b07fcd261f8c12e7",
+    "zh:2aa27ced99cf412f48b6f0893542133b2d35107d3863b883025ee5ed316728dd",
+    "zh:354893a90285a9f8fe59bb14ee91df6eefb9bf83efafedef48b6965d1a454213",
+    "zh:700d1b78f4bab6591e4e418c989bc4c2e73d3ab403929961a227f133f00fa070",
+    "zh:9f58563aa5847f2f65ac2f0a6a5e1b38beb9a1ae3bd58a580c3d8eeb411fa11a",
+    "zh:ac097e1f714aa14c255a62caf8e5022c95765e75a161ca562ccedf52db95dd79",
+    "zh:c0a75a6886c647a67ae37c9abcb98cd55728435da8142b0711e6f1c6323440a0",
+    "zh:c7d0bbc8c4aa6cd962214fe1cb24126830f1b836bf49af776a06b06410bdc767",
+    "zh:ce1a20714dc4a7ef3775e64bd1ab420b92ed59ff782a1fc1e5d9315df32c858e",
+    "zh:d35cc2226d41a30522331fde97e5dd22bf1fc9cb55773fcfe6e6cdba6687aea3",
+  ]
+}
