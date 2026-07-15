@@ -1,6 +1,6 @@
 image:
   repository: stanley17/devops-project
-  tag: latest
+  tag: 068aaef
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
