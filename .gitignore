@@ -2,3 +2,4 @@
 *.tfstate
 *.tfstate*
 minikube-linux-amd64
+*.exe
